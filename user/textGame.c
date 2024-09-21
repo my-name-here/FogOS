@@ -5,6 +5,7 @@
 #include "user/user.h"
 
 int LCG(int prev){// function that generates a psuedorandom number, using the previous value in the sequence, which starts at a seed
+    prev = prev % m;
     long a = 0;
     long c = 0;
     long m = 0;
