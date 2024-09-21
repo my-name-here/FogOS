@@ -43,6 +43,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
         printf("how much to bet (type leave to leave the casino)\n");
         gets(betInput, 128);
+        removeTrailingNewline(betInput);
         if (strcmp(betInput, "leave") == 0){//handle input of leave
             break;
         }
@@ -51,6 +52,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("invalid bet\n");
             printf("how much to bet\n");
             gets(betInput, 128);
+            removeTrailingNewline(betInput);
         }
         randVal = LCG(randVal);// get a new random val with LCG
         roll = (randVal % 97) + 1; // get a roll from 1-98
@@ -60,14 +62,19 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("would you like to sell some of your stuff?\n");
             printf("yes/no\n");
             gets(responseInput, 128);
+            removeTrailingNewline(responseInput);
             if (strcmp(responseInput, "yes") == 0){//said yes to selling
                 printf("you have %d things\n", stuff);// print out how much stuff we have, so the user knows
                 printf("how many things would you like to sell?\n");
                 gets(responseInput, 128);// get amount to sell in response var
+                removeTrailingNewline(responseInput);
+
                 while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
                     printf("invalid input. Make sure you input an int, and you have enough stuff.\n");
                     printf("how many things would you like to sell?\n");
                     gets(responseInput, 128);// get amount to sell in response var
+                    removeTrailingNewline(responseInput);
+
                 }
                 stuff = stuff - atoi(responseInput);
                 randVal = LCG(randVal);// get a new random val with LCG
@@ -79,6 +86,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             }
             printf("would you like to leave yes/no\n");
             gets(responseInput, 128);
+            removeTrailingNewline(responseInput);
             if (strcmp(responseInput, "yes") == 0){//said yes to leaving
                 break;
             }
@@ -88,13 +96,16 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you have %d things\n", stuff);
             printf("would you like to buy some things yes/no\n");
             gets(responseInput, 128);
+            removeTrailingNewline(responseInput);
             if (strcmp(responseInput, "yes") == 0){//said yes to buying
                 printf("how many things would you like to buy for $50 each?\n");
                 gets(responseInput, 128);// get amount to buy in response var
+                removeTrailingNewline(responseInput);
                 while (!isValidBet(responseInput) || atoi(responseInput)<0){//reuse bet handling to check if we can convert, and check we are buying positive amount
                     printf("invalid input. Make sure you input a positive int.\n");
                     printf("how many things would you like to buy for $50 each?\n");
                     gets(responseInput, 128);// get amount to buy in response var
+                    removeTrailingNewline(responseInput);
                 }
                 stuff = stuff + atoi(responseInput);//increase stuff
                 coins = coins - atoi(responseInput)*50;//decrease money
@@ -112,6 +123,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("would you like to sell some of your stuff?\n");
             printf("yes/no\n");
             gets(responseInput, 128);
+            removeTrailingNewline(responseInput);
             if (strcmp(responseInput, "yes") == 0){//said yes to selling
                 if (stuff<=0){//out of money and stuff
                     printf("not enough stuff\n");
@@ -121,10 +133,12 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                     printf("you have %d things\n", stuff);// print out how much stuff we have, so the user knows
                     printf("how many things would you like to sell?\n");
                     gets(responseInput, 128);// get amount to sell in response var
+                    removeTrailingNewline(responseInput);
                     while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
                         printf("invalid input. Make sure you input an int, and you have enough stuff.\n");
                         printf("how many things would you like to sell?\n");
                         gets(responseInput, 128);// get amount to sell in response var
+                        removeTrailingNewline(responseInput);
                     }
                     stuff = stuff - atoi(responseInput);
                     randVal = LCG(randVal);// get a new random val with LCG
@@ -139,13 +153,16 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         // allow user to buy stuff
         printf("would you like to buy some things yes/no\n");
         gets(responseInput, 128);
+        removeTrailingNewline(responseInput);
         if (strcmp(responseInput, "yes") == 0){//said yes to buying
             printf("how many things would you like to buy for $50 each?\n");
             gets(responseInput, 128);// get amount to buy in response var
+            removeTrailingNewline(responseInput);
             while (!isValidBet(responseInput) || atoi(responseInput)<0){//reuse bet handling to check if we can convert, and check we are buying positive amount
                 printf("invalid input. Make sure you input a positive int.\n");
                 printf("how many things would you like to buy for $50 each?\n");
                 gets(responseInput, 128);// get amount to buy in response var
+                removeTrailingNewline(responseInput);
             }
             stuff = stuff + atoi(responseInput);//increase stuff
             coins = coins - atoi(responseInput)*50;//decrease money
