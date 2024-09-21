@@ -53,10 +53,15 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you won");
             printf("would you like to sell some of your stuff?");
             printf("yes/no");
+            gets(responseInput, 128);
+            if (strcmp(responseInput, "yes")){//said yes to selling
+                printf("you have %d things", stuff);// print out how much stuff we have, so the user knows
+
+            }
         }
         else if (roll == 2){//win stuff if roll is 2
             stuff=stuff+(atoi(betInput));// win your bet in stuff
-            printf('you have %d things', stuff);
+            printf("you have %d things", stuff);
         }
         else{//you lose
             coins=coins-atoi(betInput);// lose your bet
