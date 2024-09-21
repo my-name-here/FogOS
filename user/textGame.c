@@ -36,7 +36,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
         printf("how much to bet (type leave to leave the casino)");
         gets(betInput, 128);
-        if (strcmp(bet, "leave")){//handle input of leave
+        if (strcmp(betInput, "leave")){//handle input of leave
             break;
         }
         //not leave, so now check if it is a valid bet
@@ -52,7 +52,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you won");
         }
         else if (roll == 2){//win stuff if roll is 2
-            stuff=stuff+(atoi(bet));// win your bet in stuff
+            stuff=stuff+(atoi(betInput));// win your bet in stuff
             printf('you have %d things', stuff);
         }
         else{//you lose
