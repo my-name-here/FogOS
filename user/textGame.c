@@ -103,8 +103,34 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         printf("you have $%d", coins);//print money after bet
         //now allow the user to sell stuff if they are out of money.
         if (coins <= 0){//not enough money
-
+            printf(" would you like to sell some of your stuff?");
+            printf("yes/no");
+            gets(responseInput, 128);
+            if (strcmp(responseInput, "yes")){//said yes to selling
+                if (stuff<=0){//out of money and stuff
+                    printf("not enough stuff");
+                    break;
+                }
+                else{//have at least some stuff
+                    printf("you have %d things", stuff);// print out how much stuff we have, so the user knows
+                    printf("how many things would you like to sell?");
+                    gets(responseInput, 128);// get amount to sell in response var
+                    while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
+                        printf("invalid input. Make sure you input an int, and you have enough stuff.");
+                        printf("how many things would you like to sell?");
+                        gets(responseInput, 128);// get amount to sell in response var
+                    }
+                    stuff = stuff - atoi(responseInput);
+                    randVal = LCG(randVal);// get a new random val with LCG
+                    int salePrice = randVal%20+1;//random int from 1-20
+                    printf("your stuff sold for $%d each", salePrice);
+                    printf("you have %d things", stuff);
+                    coins = coins + salePrice * atoi(responseInput);
+                    printf("$%d", coins);
+                }
+            }
         }
+        
     }
   return 0;
 }
