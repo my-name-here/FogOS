@@ -31,6 +31,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
     int stuff = 12;//starting stuff
     char *betInput = malloc(128*sizeof(char));// a var for holding the bet
     int randVal = uptime();// set seed for lcg as uptime
+    int roll = 0;//set roll var to 0;
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
         printf("how much to bet (type leave to leave the casino)");
         gets(betInput, 128);
