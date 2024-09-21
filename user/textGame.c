@@ -18,7 +18,9 @@ int isValidBet(char *bet){
     }
     int i = 0;
     while (str[i] != '\0') {//loop over every char in string
-        if (str[i]!='0' && str[i]!='1' && str[i]!='2'&& str[i]!='3'&& str[i]!='4'&& str[i]!='5'&& str[i]!='6'&& str[i]!='7'&& str[i]!='8'&& str[i]!='9')
+        if (str[i] < '0' || str[i] > '9'){
+      
+        }
         i++;
     }
     return 1;
