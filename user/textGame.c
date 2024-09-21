@@ -68,6 +68,8 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 int salePrice = randVal%99+1;//random int from 1-100
                 printf("your stuff sold for $%d each", salePrice);
                 printf("you have %d things", stuff);
+                coins = coins + salePrice * atoi(responseInput);
+                printf("$%d", coins);
             }
         }
         else if (roll == 2){//win stuff if roll is 2
