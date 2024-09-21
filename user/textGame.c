@@ -19,6 +19,9 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
         printf("how much to bet (type leave to leave the casino)");
         gets(betInput, 128);
+        if (strcmp(bet, "leave")){//handle input of leave
+      
+        }
     }
   return 0;
 }
