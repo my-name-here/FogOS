@@ -12,6 +12,8 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     long m = 536870909;// 2^29 -3
     return (a*prev+c)%m;
 }
+int isValidBet(char *bet){
+}
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     int coins = 100;//starting Coins
     int stuff = 12;//starting stuff
