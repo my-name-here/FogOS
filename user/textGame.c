@@ -13,6 +13,7 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     return (a*prev+c)%m;
 }
 int main() {
-
+  int coins = 100;//starting Coins
+  int stuff = 12;//starting stuff
   return 0;
 }
