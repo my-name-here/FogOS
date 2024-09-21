@@ -29,6 +29,9 @@ int isValidBet(char *bet){
 }
 void removeTrailingNewline(char *string){
     int stringLength = strlen(string);
+    if (stringLength > 0 && string[stringLength-1] == '\n'){//if string has at least one character, and last char is newline
+        string[stringLength-1] = '\0';
+    }
 }
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     int coins = 100;//starting Coins
