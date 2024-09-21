@@ -90,6 +90,9 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                     printf("how many things would you like to buy for $50 each?");
                     gets(responseInput, 128);// get amount to sell in response var
                 }
+                stuff = stuff + atoi(responseInput);//increase stuff
+                coins = coins - atoi(responseInput)*50;//decrease money
+
             }
         }
         else{//you lose
