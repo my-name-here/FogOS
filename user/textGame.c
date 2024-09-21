@@ -57,6 +57,14 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             if (strcmp(responseInput, "yes")){//said yes to selling
                 printf("you have %d things", stuff);// print out how much stuff we have, so the user knows
                 printf("how many things would you like to sell?");
+                gets(responseInput, 128);// get amount to sell in response var
+                while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
+                    printf("invalid input. Make sure you input an int, and you have enough stuff.");
+                    printf("how many things would you like to sell?");
+                    gets(responseInput, 128);// get amount to sell in response var
+                }
+                
+
             }
         }
         else if (roll == 2){//win stuff if roll is 2
