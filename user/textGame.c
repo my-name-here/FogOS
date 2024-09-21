@@ -19,7 +19,7 @@ int isValidBet(char *bet){
     int i = 0;
     while (str[i] != '\0') {//loop over every char in string
         if (str[i] < '0' || str[i] > '9'){// not a digit
-      
+            return 0;
         }
         i++;
     }
