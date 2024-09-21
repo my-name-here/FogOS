@@ -47,7 +47,8 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         randVal = LCG(randVal);// get a new random val with LCG
         roll = (randVal % 97) + 1; // get a roll from 1-98
         if (roll == 1){// win more coins if roll is one
-            ;
+            coins = coins + atoi(betInput)*48;//win 48 times your bet
+            printf("you won");
         }
         else if (roll == 2){//win stuff if roll is 2
             ;
