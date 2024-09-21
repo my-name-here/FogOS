@@ -13,6 +13,10 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     return (a*prev+c)%m;
 }
 int isValidBet(char *bet){
+    if bet[0] == '-'{//no negative bets allowed
+        return 0;
+    }
+    return 1;
 }
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     int coins = 100;//starting Coins
