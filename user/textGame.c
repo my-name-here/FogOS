@@ -101,6 +101,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             
         }
         printf("you have $%d", coins);//print money after bet
+        //now allow the user to sell stuff if they are out of money.
     }
   return 0;
 }
