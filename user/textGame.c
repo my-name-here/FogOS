@@ -51,7 +51,8 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you won");
         }
         else if (roll == 2){//win stuff if roll is 2
-            ;
+            stuff=stuff+(atoi(bet));// win your bet in stuff
+            printf('you have %d things', stuff);
         }
         else{//you lose
             ;
