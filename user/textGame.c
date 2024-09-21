@@ -50,7 +50,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         if (roll == 1){// win more coins if roll is one
             coins = coins + atoi(betInput)*48;//win 48 times your bet
             printf("you won");
-            printf("would you like to sell some of your stuff");
+            printf("would you like to sell some of your stuff?");
         }
         else if (roll == 2){//win stuff if roll is 2
             stuff=stuff+(atoi(betInput));// win your bet in stuff
