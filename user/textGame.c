@@ -27,6 +27,9 @@ int isValidBet(char *bet){
     return 1;
 
 }
+void removeTrailingNewline(char *string){
+    
+}
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     int coins = 100;//starting Coins
     int stuff = 12;//starting stuff
