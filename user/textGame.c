@@ -14,7 +14,7 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     return (a*prev+c)%m;
 }
 int isValidBet(char *bet){
-    if bet[0] == '-'{//no negative bets allowed
+    if (bet[0] == '-'){//no negative bets allowed
         return 0;
     }
     int i = 0;
