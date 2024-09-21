@@ -60,7 +60,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you lose");
             
         }
-        print("you have $%d", coins);//print money after bet
+        printf("you have $%d", coins);//print money after bet
     }
   return 0;
 }
