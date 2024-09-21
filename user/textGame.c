@@ -45,7 +45,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             gets(betInput, 128);
         }
         randVal = LCG(randVal);// get a new random val with LCG
-    
+        roll = (randVal % 97) + 1; // get a roll from 1-98
     }
   return 0;
 }
