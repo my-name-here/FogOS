@@ -65,7 +65,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 }
                 stuff = stuff - atoi(responseInput);
                 randVal = LCG(randVal);// get a new random val with LCG
-                int saleAmount = randVal%99+1;//random int from 1-100
+                int salePrice = randVal%99+1;//random int from 1-100
 
             }
         }
