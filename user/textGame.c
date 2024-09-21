@@ -71,6 +71,11 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 coins = coins + salePrice * atoi(responseInput);
                 printf("$%d", coins);
             }
+            printf("would you like to leave yes/no");
+            gets(responseInput, 128);
+            if (strcmp(responseInput, "yes")){//said yes to leaving
+                break;
+            }
         }
         else if (roll == 2){//win stuff if roll is 2
             stuff=stuff+(atoi(betInput));// win your bet in stuff
