@@ -43,6 +43,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("how much to bet");
             gets(betInput, 128);
         }
+        randVal = LCG(randVal);// get a new random val with LCG
     
     }
   return 0;
