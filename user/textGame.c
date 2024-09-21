@@ -146,5 +146,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         }
     }
     printf("profit was $%d\n",coins-100);
+    free(betInput);
+    free(responseInput);
     return 0;
 }
