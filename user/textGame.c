@@ -8,7 +8,7 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     long a = 0;
     long c = 0;
     long m = 0;
-  return 0;
+  return (a*prev+c)%m;
 }
 int main() {
 
