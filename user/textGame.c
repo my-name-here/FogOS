@@ -84,11 +84,11 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             gets(responseInput, 128);
             if (strcmp(responseInput, "yes")){//said yes to buying
                 printf("how many things would you like to buy for $50 each?");
-                gets(responseInput, 128);// get amount to sell in response var
+                gets(responseInput, 128);// get amount to buy in response var
                 while (!isValidBet(responseInput) || atoi(responseInput)<0){//reuse bet handling to check if we can convert, and check we are buying positive amount
                     printf("invalid input. Make sure you input a positive int.");
                     printf("how many things would you like to buy for $50 each?");
-                    gets(responseInput, 128);// get amount to sell in response var
+                    gets(responseInput, 128);// get amount to buy in response var
                 }
                 stuff = stuff + atoi(responseInput);//increase stuff
                 coins = coins - atoi(responseInput)*50;//decrease money
@@ -135,11 +135,11 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         gets(responseInput, 128);
         if (strcmp(responseInput, "yes")){//said yes to buying
             printf("how many things would you like to buy for $50 each?");
-            gets(responseInput, 128);// get amount to sell in response var
+            gets(responseInput, 128);// get amount to buy in response var
             while (!isValidBet(responseInput) || atoi(responseInput)<0){//reuse bet handling to check if we can convert, and check we are buying positive amount
                 printf("invalid input. Make sure you input a positive int.");
                 printf("how many things would you like to buy for $50 each?");
-                gets(responseInput, 128);// get amount to sell in response var
+                gets(responseInput, 128);// get amount to buy in response var
             }
             stuff = stuff + atoi(responseInput);//increase stuff
             coins = coins - atoi(responseInput)*50;//decrease money
