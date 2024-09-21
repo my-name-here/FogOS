@@ -37,7 +37,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
         printf("how much to bet (type leave to leave the casino)\n");
         gets(betInput, 128);
-        if (strcmp(betInput, "leave")){//handle input of leave
+        if (strcmp(betInput, "leave")==0){//handle input of leave
             break;
         }
         //not leave, so now check if it is a valid bet
@@ -54,7 +54,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("would you like to sell some of your stuff?\n");
             printf("yes/no\n");
             gets(responseInput, 128);
-            if (strcmp(responseInput, "yes")){//said yes to selling
+            if (strcmp(responseInput, "yes")==0){//said yes to selling
                 printf("you have %d things\n", stuff);// print out how much stuff we have, so the user knows
                 printf("how many things would you like to sell?\n");
                 gets(responseInput, 128);// get amount to sell in response var
@@ -73,7 +73,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             }
             printf("would you like to leave yes/no\n");
             gets(responseInput, 128);
-            if (strcmp(responseInput, "yes")){//said yes to leaving
+            if (strcmp(responseInput, "yes")==0){//said yes to leaving
                 break;
             }
         }
@@ -82,7 +82,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you have %d things\n", stuff);
             printf("would you like to buy some things yes/no\n");
             gets(responseInput, 128);
-            if (strcmp(responseInput, "yes")){//said yes to buying
+            if (strcmp(responseInput, "yes")==0){//said yes to buying
                 printf("how many things would you like to buy for $50 each?\n");
                 gets(responseInput, 128);// get amount to buy in response var
                 while (!isValidBet(responseInput) || atoi(responseInput)<0){//reuse bet handling to check if we can convert, and check we are buying positive amount
@@ -103,10 +103,10 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         printf("you have $%d\n", coins);//print money after bet
         //now allow the user to sell stuff if they are out of money.
         if (coins <= 0){//not enough money
-            printf(" would you like to sell some of your stuff?\n");
+            printf("would you like to sell some of your stuff?\n");
             printf("yes/no\n");
             gets(responseInput, 128);
-            if (strcmp(responseInput, "yes")){//said yes to selling
+            if (strcmp(responseInput, "yes")==0){//said yes to selling
                 if (stuff<=0){//out of money and stuff
                     printf("not enough stuff\n");
                     break;
@@ -133,7 +133,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         // allow user to buy stuff
         printf("would you like to buy some things yes/no\n");
         gets(responseInput, 128);
-        if (strcmp(responseInput, "yes")){//said yes to buying
+        if (strcmp(responseInput, "yes")==0){//said yes to buying
             printf("how many things would you like to buy for $50 each?\n");
             gets(responseInput, 128);// get amount to buy in response var
             while (!isValidBet(responseInput) || atoi(responseInput)<0){//reuse bet handling to check if we can convert, and check we are buying positive amount
