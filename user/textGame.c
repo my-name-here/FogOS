@@ -15,8 +15,10 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     int coins = 100;//starting Coins
     int stuff = 12;//starting stuff
+    char *betInput = malloc(128*sizeof(char));// a var for holding the bet
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
-    
+        printf("how much to bet (type leave to leave the casino)");
+        gets(betInput, 128);
     }
   return 0;
 }
