@@ -36,6 +36,13 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         if (strcmp(bet, "leave")){//handle input of leave
             break;
         }
+        //not leave, so now check if it is a valid bet
+        while (!isValidBet(betInput)){
+            printf("invalid bet")
+            printf("how much to bet");
+            gets(betInput, 128);
+        }
+    
     }
   return 0;
 }
