@@ -20,7 +20,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         printf("how much to bet (type leave to leave the casino)");
         gets(betInput, 128);
         if (strcmp(bet, "leave")){//handle input of leave
-      
+            break;
         }
     }
   return 0;
