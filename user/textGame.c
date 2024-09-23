@@ -89,7 +89,7 @@ void performSelling(int *coinAmount, int *stuffAmount, int *randomNumber, int ma
     printf("your stuff sold for $%d each\n", salePrice);
     printf("you have %d things\n", *stuffAmount);
     *coinAmount = *coinAmount + salePrice * atoi(responseInput);
-    printf("$%d", *coinAmount);
+    printf("You now have $%d\n", *coinAmount);
 }
 
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
