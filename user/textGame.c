@@ -56,6 +56,10 @@ int shouldSellStuff(char *responseInput){
     return 0;// didn't want to sell
 }
 
+void performBuying(int *coinAmount, int *stuffAmount){
+    
+}
+
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     const int initialStuff = 12;// starting stuff amount
     const int initialCoins = 100;// starting coins amount
