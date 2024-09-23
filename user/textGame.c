@@ -87,11 +87,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         if (roll == 1){// win more coins if roll is one
             coins = coins + atoi(betInput)*48;//win 48 times your bet
             printf("you won\n");
-            printf("would you like to sell some of your stuff?\n");
-            printf("yes/no\n");
-            gets(responseInput, 128);
-            removeTrailingNewline(responseInput);
-            if (strcmp(responseInput, "yes") == 0){//said yes to selling
+            if (shouldSellStuff(responseInput)){//does the user want to sell
                 printf("you have %d things\n", stuff);// print out how much stuff we have, so the user knows
                 printf("how many things would you like to sell?\n");
                 gets(responseInput, 128);// get amount to sell in response var
@@ -149,11 +145,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         printf("you have $%d\n", coins);//print money after bet
         //now allow the user to sell stuff if they are out of money.
         if (coins <= 0){//not enough money
-            printf("would you like to sell some of your stuff?\n");
-            printf("yes/no\n");
-            gets(responseInput, 128);
-            removeTrailingNewline(responseInput);
-            if (strcmp(responseInput, "yes") == 0){//said yes to selling
+            if (shouldSellStuff(responseInput)){//user wants to sell
                 if (stuff<=0){//out of money and stuff
                     printf("not enough stuff\n");
                     break;
