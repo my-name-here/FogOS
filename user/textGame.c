@@ -94,6 +94,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         }
         else if (roll == 2){//win stuff if roll is 2
             stuff=stuff+(atoi(betInput));// win your bet in stuff
+            printf("you won %d things\n", atoi(betInput));
             printf("you have %d things\n", stuff);
             printf("would you like to buy some things yes/no\n");
             gets(responseInput, 128);
