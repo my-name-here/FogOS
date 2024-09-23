@@ -13,13 +13,13 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     prev = prev % m;
     return (a*prev+c)%m;
 }
-int isNonNegativeInt(char *bet){
-    if (bet[0] == '-'){//no negative bets allowed
+int isNonNegativeInt(char *inString){
+    if (inString[0] == '-'){//no negative bets allowed
         return 0;
     }
     int i = 0;
-    while (bet[i] != '\0') {//loop over every char in string
-        if (bet[i] < '0' || bet[i] > '9'){// not a digit
+    while (inString[i] != '\0') {//loop over every char in string
+        if (inString[i] < '0' || inString[i] > '9'){// not a digit
             return 0;
         }
         i++;
