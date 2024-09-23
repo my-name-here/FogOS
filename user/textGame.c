@@ -125,24 +125,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you won\n");
             if (shouldSellStuff(responseInput)){//does the user want to sell
                 printf("you have %d things\n", stuff);// print out how much stuff we have, so the user knows
-                printf("how many things would you like to sell?\n");
-                gets(responseInput, 128);// get amount to sell in response var
-                removeTrailingNewline(responseInput);
-
-                while (!isNonNegativeInt(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
-                    printf("invalid input. Make sure you input a non-negative integer, and you have enough stuff.\n");
-                    printf("how many things would you like to sell?\n");
-                    gets(responseInput, 128);// get amount to sell in response var
-                    removeTrailingNewline(responseInput);
-
-                }
-                stuff = stuff - atoi(responseInput);
-                randVal = LCG(randVal);// get a new random val with LCG
-                int salePrice = randVal%99+1;//random int from 1-100
-                printf("your stuff sold for $%d each\n", salePrice);
-                printf("you have %d things\n", stuff);
-                coins = coins + salePrice * atoi(responseInput);
-                printf("$%d", coins);
+                performSelling(&coins, &stuff, &randVal, 100, responseInput);
             }
             printf("would you like to leave yes/no\n");
             gets(responseInput, 128);
@@ -175,22 +158,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 }
                 else{//have at least some stuff
                     printf("you have %d things\n", stuff);// print out how much stuff we have, so the user knows
-                    printf("how many things would you like to sell?\n");
-                    gets(responseInput, 128);// get amount to sell in response var
-                    removeTrailingNewline(responseInput);
-                    while (!isNonNegativeInt(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
-                        printf("invalid input. Make sure you input a non-negative integer, and you have enough stuff.\n");
-                        printf("how many things would you like to sell?\n");
-                        gets(responseInput, 128);// get amount to sell in response var
-                        removeTrailingNewline(responseInput);
-                    }
-                    stuff = stuff - atoi(responseInput);
-                    randVal = LCG(randVal);// get a new random val with LCG
-                    int salePrice = randVal%20+1;//random int from 1-20
-                    printf("your stuff sold for $%d each\n", salePrice);
-                    printf("you have %d things\n", stuff);
-                    coins = coins + salePrice * atoi(responseInput);
-                    printf("$%d\n", coins);
+                    performSelling(&coins, &stuff, &randVal, 20, responseInput);
                 }
             }
         }
