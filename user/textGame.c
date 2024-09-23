@@ -7,9 +7,9 @@
 int LCG(int prev){// function that generates a psuedorandom number, using the previous value in the sequence, which starts at a seed
 
     //https://www.ams.org/journals/mcom/1999-68-225/S0025-5718-99-00996-5/S0025-5718-99-00996-5.pdf has table of values
-    long a = 530877178;
-    long c = 0;//c = 0, since it is what the chart has
-    long m = 536870909;// 2^29 -3
+    const long a = 530877178;
+    const long c = 0;//c = 0, since it is what the chart has
+    const long m = 536870909;// 2^29 -3
     prev = prev % m;
     return (a*prev+c)%m;
 }
@@ -34,7 +34,7 @@ void removeTrailingNewline(char *string){
     }
 }
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
-    int initialCoins = 100;// starting coins amount
+    const int initialCoins = 100;// starting coins amount
     int coins = initialCoins;//set coins var
     int stuff = 12;//starting stuff
     char *betInput = malloc(128*sizeof(char));// a var for holding the bet
