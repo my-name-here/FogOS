@@ -34,9 +34,10 @@ void removeTrailingNewline(char *string){
     }
 }
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
+    const int initialStuff = 12;// starting stuff amount
     const int initialCoins = 100;// starting coins amount
     int coins = initialCoins;//set coins var
-    int stuff = 12;//starting stuff
+    int stuff = initialStuff;//set stuff var
     char *betInput = malloc(128*sizeof(char));// a var for holding the bet
     char *responseInput = malloc(128*sizeof(char));//a var for holding various responses
     int randVal = uptime();// set seed for lcg as uptime
@@ -171,6 +172,8 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         }
     }
     printf("profit was $%d\n",coins-initialCoins);
+    printf("you gained %d things\n",stuff-initialStuff);
+
     free(betInput);
     free(responseInput);
     return 0;
