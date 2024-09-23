@@ -33,6 +33,8 @@ void removeTrailingNewline(char *string){
         string[stringLength-1] = '\0';
     }
 }
+
+
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     const int initialStuff = 12;// starting stuff amount
     const int initialCoins = 100;// starting coins amount
