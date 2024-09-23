@@ -43,7 +43,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
     int randVal = uptime();// set seed for lcg as uptime
     int roll = 0;//set roll var to 0;
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
-        if (coins == 0 && stuff == 0){//stop if you have no money and no stuff to sell
+        if (coins <= 0 && stuff <= 0){//stop if you are out of money and stuff(changed from equals zero, since if negative, also want to stop)
             break;
         }
         printf("how much to bet (type leave to leave the casino)\n");
