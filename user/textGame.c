@@ -34,6 +34,13 @@ void removeTrailingNewline(char *string){
     }
 }
 
+int shouldBuyStuff(char *responseInput){
+
+}
+
+int shouldSellStuff(char *responseInput){
+    
+}
 
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
     const int initialStuff = 12;// starting stuff amount
