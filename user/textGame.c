@@ -34,7 +34,8 @@ void removeTrailingNewline(char *string){
     }
 }
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
-    int coins = 100;//starting Coins
+    int initialCoins = 100;// starting coins amount
+    int coins = initialCoins;//set coins var
     int stuff = 12;//starting stuff
     char *betInput = malloc(128*sizeof(char));// a var for holding the bet
     char *responseInput = malloc(128*sizeof(char));//a var for holding various responses
