@@ -119,10 +119,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             stuff=stuff+(atoi(betInput));// win your bet in stuff
             printf("you won %d things\n", atoi(betInput));
             printf("you have %d things\n", stuff);
-            printf("would you like to buy some things yes/no\n");
-            gets(responseInput, 128);
-            removeTrailingNewline(responseInput);
-            if (strcmp(responseInput, "yes") == 0){//said yes to buying
+            if (shouldBuyStuff(responseInput)){//user wants to buy things
                 printf("how many things would you like to buy for $50 each?\n");
                 gets(responseInput, 128);// get amount to buy in response var
                 removeTrailingNewline(responseInput);
@@ -172,10 +169,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             }
         }
         // allow user to buy stuff
-        printf("would you like to buy some things yes/no\n");
-        gets(responseInput, 128);
-        removeTrailingNewline(responseInput);
-        if (strcmp(responseInput, "yes") == 0){//said yes to buying
+        if (shouldBuyStuff(responseInput)){//user wants to buy things
             printf("how many things would you like to buy for $50 each?\n");
             gets(responseInput, 128);// get amount to buy in response var
             removeTrailingNewline(responseInput);
