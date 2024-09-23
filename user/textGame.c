@@ -85,7 +85,7 @@ void performSelling(int *coinAmount, int *stuffAmount, int *randomNumber, int ma
     }
     *stuffAmount = *stuffAmount - atoi(responseInput);
     *randomNumber = LCG(*randomNumber);// get a new random val with LCG
-    int salePrice = *randomNumber%(maxSalePrice-1)+1;//random int from 1-100
+    int salePrice = *randomNumber%(maxSalePrice-1)+1;//random int from 1-maxSalePrice
     printf("your stuff sold for $%d each\n", salePrice);
     printf("you have %d things\n", *stuffAmount);
     *coinAmount = *coinAmount + salePrice * atoi(responseInput);
