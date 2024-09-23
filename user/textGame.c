@@ -48,7 +48,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             break;
         }
         //not leave, so now check if it is a valid bet
-        while (!isValidBet(betInput)){
+        while (!isValidBet(betInput) || atoi(betInput)>coins){//make sure it is valid int input, if it is, also make sure we have enough coins
             printf("invalid bet\n");
             printf("how much to bet\n");
             gets(betInput, 128);
