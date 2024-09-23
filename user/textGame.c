@@ -7,9 +7,9 @@
 int LCG(int prev){// function that generates a psuedorandom number, using the previous value in the sequence, which starts at a seed
 
     //https://www.ams.org/journals/mcom/1999-68-225/S0025-5718-99-00996-5/S0025-5718-99-00996-5.pdf has table of values
-    long a = 530877178;
-    long c = 0;//c = 0, since it is what the chart has
-    long m = 536870909;// 2^29 -3
+    const long a = 530877178;
+    const long c = 0;//c = 0, since it is what the chart has
+    const long m = 536870909;// 2^29 -3
     prev = prev % m;
     return (a*prev+c)%m;
 }
@@ -34,13 +34,18 @@ void removeTrailingNewline(char *string){
     }
 }
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
-    int coins = 100;//starting Coins
-    int stuff = 12;//starting stuff
+    const int initialStuff = 12;// starting stuff amount
+    const int initialCoins = 100;// starting coins amount
+    int coins = initialCoins;//set coins var
+    int stuff = initialStuff;//set stuff var
     char *betInput = malloc(128*sizeof(char));// a var for holding the bet
     char *responseInput = malloc(128*sizeof(char));//a var for holding various responses
     int randVal = uptime();// set seed for lcg as uptime
     int roll = 0;//set roll var to 0;
     while (coins >= 0){//keep going while coins <= 0, not < because allows you to sell stuff at 0
+        if (coins == 0 && stuff == 0){//stop if you have no money and no stuff to sell
+            break;
+        }
         printf("how much to bet (type leave to leave the casino)\n");
         gets(betInput, 128);
         removeTrailingNewline(betInput);
@@ -48,8 +53,8 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             break;
         }
         //not leave, so now check if it is a valid bet
-        while (!isValidBet(betInput)){
-            printf("invalid bet\n");
+        while (!isValidBet(betInput) || atoi(betInput)>coins){//make sure it is valid int input, if it is, also make sure we have enough coins
+            printf("invalid bet. make sure you give a positive integer, and have enough money.\n");
             printf("how much to bet\n");
             gets(betInput, 128);
             removeTrailingNewline(betInput);
@@ -93,6 +98,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         }
         else if (roll == 2){//win stuff if roll is 2
             stuff=stuff+(atoi(betInput));// win your bet in stuff
+            printf("you won %d things\n", atoi(betInput));
             printf("you have %d things\n", stuff);
             printf("would you like to buy some things yes/no\n");
             gets(responseInput, 128);
@@ -168,7 +174,9 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             coins = coins - atoi(responseInput)*50;//decrease money
         }
     }
-    printf("profit was $%d\n",coins-100);
+    printf("profit was $%d\n",coins-initialCoins);
+    printf("you gained %d things\n",stuff-initialStuff);
+
     free(betInput);
     free(responseInput);
     return 0;
