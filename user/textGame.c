@@ -135,17 +135,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("you won %d things\n", atoi(betInput));
             printf("you have %d things\n", stuff);
             if (shouldBuyStuff(responseInput)){//user wants to buy things
-                printf("how many things would you like to buy for $50 each?\n");
-                gets(responseInput, 128);// get amount to buy in response var
-                removeTrailingNewline(responseInput);
-                while (!isNonNegativeInt(responseInput) || atoi(responseInput)<0 || 50*atoi(responseInput)>coins){//reuse bet handling to check if we can convert, and check we are buying positive amount, and that we have enough money
-                    printf("invalid input. Make sure you input a positive int, and have enough money to buy that many.\n");
-                    printf("how many things would you like to buy for $50 each?\n");
-                    gets(responseInput, 128);// get amount to buy in response var
-                    removeTrailingNewline(responseInput);
-                }
-                stuff = stuff + atoi(responseInput);//increase stuff
-                coins = coins - atoi(responseInput)*50;//decrease money
+                performBuying(&coins, &stuff, responseInput);
 
             }
         }
@@ -185,17 +175,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
         }
         // allow user to buy stuff
         if (shouldBuyStuff(responseInput)){//user wants to buy things
-            printf("how many things would you like to buy for $50 each?\n");
-            gets(responseInput, 128);// get amount to buy in response var
-            removeTrailingNewline(responseInput);
-            while (!isNonNegativeInt(responseInput) || atoi(responseInput)<0 || 50*atoi(responseInput)>coins){//reuse bet handling to check if we can convert, and check we are buying positive amount, and that we have enough money
-                printf("invalid input. Make sure you input a positive int, and have enough money to buy that many.\n");
-                printf("how many things would you like to buy for $50 each?\n");
-                gets(responseInput, 128);// get amount to buy in response var
-                removeTrailingNewline(responseInput);
-            }
-            stuff = stuff + atoi(responseInput);//increase stuff
-            coins = coins - atoi(responseInput)*50;//decrease money
+            performBuying(&coins, &stuff, responseInput);
         }
     }
     printf("profit was $%d\n",coins-initialCoins);
