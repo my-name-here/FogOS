@@ -13,7 +13,7 @@ int LCG(int prev){// function that generates a psuedorandom number, using the pr
     prev = prev % m;
     return (a*prev+c)%m;
 }
-int isValidBet(char *bet){
+int isNonNegativeInt(char *bet){
     if (bet[0] == '-'){//no negative bets allowed
         return 0;
     }
@@ -53,7 +53,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             break;
         }
         //not leave, so now check if it is a valid bet
-        while (!isValidBet(betInput) || atoi(betInput)>coins){//make sure it is valid int input, if it is, also make sure we have enough coins
+        while (!isNonNegativeInt(betInput) || atoi(betInput)>coins){//make sure it is valid int input, if it is, also make sure we have enough coins
             printf("invalid bet. make sure you give a positive integer, and have enough money.\n");
             printf("how much to bet\n");
             gets(betInput, 128);
@@ -74,7 +74,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 gets(responseInput, 128);// get amount to sell in response var
                 removeTrailingNewline(responseInput);
 
-                while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
+                while (!isNonNegativeInt(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
                     printf("invalid input. Make sure you input a non-negative integer, and you have enough stuff.\n");
                     printf("how many things would you like to sell?\n");
                     gets(responseInput, 128);// get amount to sell in response var
@@ -107,7 +107,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 printf("how many things would you like to buy for $50 each?\n");
                 gets(responseInput, 128);// get amount to buy in response var
                 removeTrailingNewline(responseInput);
-                while (!isValidBet(responseInput) || atoi(responseInput)<0 || 50*atoi(responseInput)>coins){//reuse bet handling to check if we can convert, and check we are buying positive amount, and that we have enough money
+                while (!isNonNegativeInt(responseInput) || atoi(responseInput)<0 || 50*atoi(responseInput)>coins){//reuse bet handling to check if we can convert, and check we are buying positive amount, and that we have enough money
                     printf("invalid input. Make sure you input a positive int, and have enough money to buy that many.\n");
                     printf("how many things would you like to buy for $50 each?\n");
                     gets(responseInput, 128);// get amount to buy in response var
@@ -140,7 +140,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                     printf("how many things would you like to sell?\n");
                     gets(responseInput, 128);// get amount to sell in response var
                     removeTrailingNewline(responseInput);
-                    while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
+                    while (!isNonNegativeInt(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
                         printf("invalid input. Make sure you input a non-negative integer, and you have enough stuff.\n");
                         printf("how many things would you like to sell?\n");
                         gets(responseInput, 128);// get amount to sell in response var
@@ -164,7 +164,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             printf("how many things would you like to buy for $50 each?\n");
             gets(responseInput, 128);// get amount to buy in response var
             removeTrailingNewline(responseInput);
-            while (!isValidBet(responseInput) || atoi(responseInput)<0 || 50*atoi(responseInput)>coins){//reuse bet handling to check if we can convert, and check we are buying positive amount, and that we have enough money
+            while (!isNonNegativeInt(responseInput) || atoi(responseInput)<0 || 50*atoi(responseInput)>coins){//reuse bet handling to check if we can convert, and check we are buying positive amount, and that we have enough money
                 printf("invalid input. Make sure you input a positive int, and have enough money to buy that many.\n");
                 printf("how many things would you like to buy for $50 each?\n");
                 gets(responseInput, 128);// get amount to buy in response var
