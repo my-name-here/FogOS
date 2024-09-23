@@ -35,11 +35,25 @@ void removeTrailingNewline(char *string){
 }
 
 int shouldBuyStuff(char *responseInput){
-
+    // allow user to buy stuff
+    printf("would you like to buy some things yes/no\n");
+    gets(responseInput, 128);
+    removeTrailingNewline(responseInput);
+    if (strcmp(responseInput, "yes") == 0){//said yes to buying
+        return 1;
+    }
+    return 0; //didn't want to buy
 }
 
 int shouldSellStuff(char *responseInput){
-    
+    printf("would you like to sell some of your stuff?\n");
+    printf("yes/no\n");
+    gets(responseInput, 128);
+    removeTrailingNewline(responseInput);
+    if (strcmp(responseInput, "yes") == 0){//said yes to selling
+        return 1;
+    }
+    return 0;// didn't want to sell
 }
 
 int main() {// a reimplementation of a simple casino game I wrote in python a while ago
