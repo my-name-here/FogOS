@@ -141,7 +141,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                     gets(responseInput, 128);// get amount to sell in response var
                     removeTrailingNewline(responseInput);
                     while (!isValidBet(responseInput) || atoi(responseInput)>stuff){//reuse bet handling to check if we can convert, and check we have enough stuff
-                        printf("invalid input. Make sure you input an int, and you have enough stuff.\n");
+                        printf("invalid input. Make sure you input a non-negative integer, and you have enough stuff.\n");
                         printf("how many things would you like to sell?\n");
                         gets(responseInput, 128);// get amount to sell in response var
                         removeTrailingNewline(responseInput);
