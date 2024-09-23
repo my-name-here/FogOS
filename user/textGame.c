@@ -169,7 +169,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             coins = coins - atoi(responseInput)*50;//decrease money
         }
     }
-    printf("profit was $%d\n",coins-100);
+    printf("profit was $%d\n",coins-initialCoins);
     free(betInput);
     free(responseInput);
     return 0;
