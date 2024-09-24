@@ -102,9 +102,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
             break;
         }
         printf("how much to bet (type leave to leave the casino)\n");
-        gets(betInput, 128);
-        removeTrailingNewline(betInput);
-        if (strcmp(betInput, "leave") == 0){//handle input of leave
+        if (getInputAndCompare(betInput, "leave")){//handle input of leave
             break;
         }
         //not leave, so now check if it is a valid bet
@@ -124,9 +122,7 @@ int main() {// a reimplementation of a simple casino game I wrote in python a wh
                 performSelling(&coins, &stuff, &randVal, 100, responseInput);
             }
             printf("would you like to leave yes/no\n");
-            gets(responseInput, 128);
-            removeTrailingNewline(responseInput);
-            if (strcmp(responseInput, "yes") == 0){//said yes to leaving
+            if (getInputAndCompare(responseInput, "yes")){//said yes to leaving
                 break;
             }
         }
