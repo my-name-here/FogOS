@@ -35,7 +35,12 @@ void removeTrailingNewline(char *string){
 }
 
 int getInputAndCompare(char *userInput, char *comparisonString){
-    
+    gets(userInput, 128);
+    removeTrailingNewline(userInput);
+    if (strcmp(userInput, comparisonString) == 0){
+        return 1;
+    }
+    return 0;
 }
 
 int shouldBuyStuff(char *responseInput){
