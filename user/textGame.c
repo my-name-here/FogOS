@@ -49,7 +49,6 @@ int shouldBuyStuff(char *responseInput){
 int shouldSellStuff(char *responseInput){
     printf("would you like to sell some of your stuff yes/no\n");
     return getInputAndCompare(responseInput, "yes");
-
 }
 
 void performBuying(int *coinAmount, int *stuffAmount, char *responseInput){
