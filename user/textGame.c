@@ -40,17 +40,6 @@ int getInputAndCompare(char *userInput, char *comparisonString){
     return (strcmp(userInput, comparisonString) == 0);//1 if they match, 0 otherwise
 }
 
-int shouldBuyStuff(char *responseInput){
-    // allow user to buy stuff
-    printf("would you like to buy some things yes/no\n");
-    return getInputAndCompare(responseInput, "yes");
-}
-
-int shouldSellStuff(char *responseInput){
-    printf("would you like to sell some of your stuff yes/no\n");
-    return getInputAndCompare(responseInput, "yes");
-}
-
 int shouldBuyOrSellStuff(char *responseInput, int isSelling){//isSelling is 1 if selling, 0 if buying
     printf("would you like to %s\n", (isSelling ? "sell some of your stuff yes/no" : "buy some things yes/no"));//use ternary operator to change the print depending on if buying or selling
     return getInputAndCompare(responseInput, "yes");
