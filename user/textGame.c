@@ -37,18 +37,14 @@ void removeTrailingNewline(char *string){
 int getInputAndCompare(char *userInput, char *comparisonString){
     gets(userInput, 128);
     removeTrailingNewline(userInput);
+    //probably could just return (strcmp(userInput, comparisonString) == 0), but wanting to be explicit about the return here
     return ((strcmp(userInput, comparisonString) == 0)? 1 : 0);//1 if they match, 0 otherwise
 }
 
 int shouldBuyStuff(char *responseInput){
     // allow user to buy stuff
     printf("would you like to buy some things yes/no\n");
-    gets(responseInput, 128);
-    removeTrailingNewline(responseInput);
-    if (strcmp(responseInput, "yes") == 0){//said yes to buying
-        return 1;
-    }
-    return 0; //didn't want to buy
+    return getInputAndCompare(responseInput, "yes");
 }
 
 int shouldSellStuff(char *responseInput){
