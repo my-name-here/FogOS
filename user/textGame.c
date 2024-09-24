@@ -51,6 +51,11 @@ int shouldSellStuff(char *responseInput){
     return getInputAndCompare(responseInput, "yes");
 }
 
+int shouldBuyOrSellStuff(char *responseInput, int isSelling){//isSelling is 1 if selling, 0 if buying
+    printf("would you like to %s\n", (isSelling ? "sell some of your stuff yes/no" : "buy some things yes/no"));//use ternary operator to change the print depending on if buying or selling
+    return getInputAndCompare(responseInput, "yes");
+}
+
 void performBuying(int *coinAmount, int *stuffAmount, char *responseInput){
     printf("how many things would you like to buy for $50 each?\n");
     gets(responseInput, 128);// get amount to buy in response var
