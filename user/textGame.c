@@ -34,6 +34,10 @@ void removeTrailingNewline(char *string){
     }
 }
 
+int getInputAndCompare(char *userInput, char *comparisonString){
+    
+}
+
 int shouldBuyStuff(char *responseInput){
     // allow user to buy stuff
     printf("would you like to buy some things yes/no\n");
