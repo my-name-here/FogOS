@@ -38,7 +38,7 @@ int getInputAndCompare(char *userInput, char *comparisonString){
     gets(userInput, 128);
     removeTrailingNewline(userInput);
     //probably could just return (strcmp(userInput, comparisonString) == 0), but wanting to be explicit about the return here
-    return ((strcmp(userInput, comparisonString) == 0)? 1 : 0);//1 if they match, 0 otherwise
+    return (strcmp(userInput, comparisonString) == 0);//1 if they match, 0 otherwise
 }
 
 int shouldBuyStuff(char *responseInput){
